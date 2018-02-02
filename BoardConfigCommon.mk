@@ -40,6 +40,9 @@ TARGET_USES_UEFI := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml

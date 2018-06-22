@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+BUILD_BROKEN_DUP_RULES := true
+
 BOARD_VENDOR := samsung
 COMMON_PATH := device/samsung/sm8150-common
 

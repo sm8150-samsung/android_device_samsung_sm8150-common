@@ -84,3 +84,7 @@ PRODUCT_BOOT_JARS += \
 # Trust HAL
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service
+
+# WiFi
+PRODUCT_PACKAGES += \
+    WifiOverlay

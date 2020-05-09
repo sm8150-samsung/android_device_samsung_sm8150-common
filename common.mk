@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
     fastbootd \
     init.recovery.qcom.rc
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.1-service.sm8150-multihal
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext

@@ -50,6 +50,7 @@ BUILD_WITHOUT_VENDOR := true
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/system_ext.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true

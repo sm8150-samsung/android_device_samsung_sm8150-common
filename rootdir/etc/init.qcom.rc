@@ -22,3 +22,17 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+
+on init
+    # TSP
+    chown system system /sys/class/sec/tsp/cmd
+
+on early-boot
+    mount none /system/lib64/libperfmgr.so /vendor/lib64/libperfmgr.so bind
+    mount none /system/lib64/pixel-power-ext-V1-ndk_platform.so /vendor/lib64/pixel-power-ext-V1-ndk_platform.so bind
+    mount none /system/lib64/android.hardware.power-V1-ndk_platform.so /vendor/lib64/android.hardware.power-V1-ndk_platform.so bind
+    mount none /system/lib64/vendor.lineage.power-V1-ndk_platform.so /vendor/lib64/vendor.lineage.power-V1-ndk_platform.so bind
+
+on boot
+    # Power HAL
+    chown system system /sys/class/sec/tsp/input/enabled

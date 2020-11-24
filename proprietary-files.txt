@@ -1,0 +1,24 @@
+# ant
+-lib/libantradio.so
+-lib64/libantradio.so
+system_ext/lib/com.qualcomm.qti.ant@1.0.so
+system_ext/lib64/com.qualcomm.qti.ant@1.0.so
+
+# Hotword
+-system_ext/framework/com.android.hotwordenrollment.common.util.jar
+-product/priv-app/HotwordEnrollmentXGoogleExWCD9340/HotwordEnrollmentXGoogleExWCD9340.apk;PRESIGNED
+-product/priv-app/HotwordEnrollmentOKGoogleExWCD9340/HotwordEnrollmentOKGoogleExWCD9340.apk;PRESIGNED
+
+# NFC
+etc/nfcee_access.xml
+etc/nfc_key
+
+# Radio
+system_ext/lib/vendor.qti.imsrtpservice@3.0.so
+system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
+
+# QTI
+system_ext/etc/permissions/com.qualcomm.qti.imscmservice.xml
+etc/permissions/privapp-permissions-qti.xml
+etc/permissions/qti_telephony_hidl_wrapper.xml
+etc/sysconfig/qti_whitelist.xml

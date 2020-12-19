@@ -41,6 +41,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1-service.sm8150-multihal
 
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.hifi_sensors.xml:system/etc/permissions/android.hardware.sensor.hifi_sensors.xml
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext

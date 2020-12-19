@@ -25,6 +25,10 @@ PRODUCT_ENFORCE_RRO_TARGETS += *
 PRODUCT_PACKAGES += \
     audio.a2dp.default
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/com.android.hotwordenrollment.common.util.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.hotwordenrollment.common.util.xml \

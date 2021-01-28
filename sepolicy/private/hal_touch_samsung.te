@@ -1,0 +1,11 @@
+type hal_touch_samsung, domain, coredomain;
+hal_server_domain(hal_touch_samsung, hal_lineage_touch)
+
+type hal_touch_samsung_exec, system_file_type, exec_type, file_type;
+init_daemon_domain(hal_touch_samsung)
+
+allow hal_touch_samsung sysfs_sec:dir search;
+allow hal_touch_samsung sysfs_sec:file rw_file_perms;
+
+allow hal_touch_samsung sysfs_ss_writable:dir search;
+allow hal_touch_samsung sysfs_ss_writable:file rw_file_perms;

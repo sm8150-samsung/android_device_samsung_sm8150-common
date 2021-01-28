@@ -81,6 +81,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# Touch
+PRODUCT_PACKAGES += \
+    lineage.touch@1.0-service.sm8150
+
 # Trust HAL
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service

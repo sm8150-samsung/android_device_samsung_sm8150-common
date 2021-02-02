@@ -48,10 +48,12 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
-BUILD_WITHOUT_VENDOR := true 
+TARGET_COPY_OUT_ODM := odm
 
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
@@ -86,15 +88,9 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     omr
 
 # SELinux
-include device/qcom/sepolicy/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/samsung_slsi/sepolicy/common/private \
-    $(COMMON_PATH)/sepolicy/private
-
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/samsung_slsi/sepolicy/common/public
-
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # Soong namespaces

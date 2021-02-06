@@ -7,6 +7,8 @@
 BOARD_VENDOR := samsung
 COMMON_PATH := device/samsung/sm8150-common
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
@@ -73,6 +75,10 @@ TARGET_USES_MKE2FS := true
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # Root
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 BOARD_ROOT_EXTRA_FOLDERS := \
@@ -86,6 +92,9 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     prism \
     spu \
     omr
+
+# Security Patch Level
+VENDOR_SECURITY_PATCH := 2021-01-01
 
 # SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk

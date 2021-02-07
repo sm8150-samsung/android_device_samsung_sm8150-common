@@ -15,3 +15,15 @@ allow spu_file labeledfs:filesystem associate;
 
 type omr_file, fs_type;
 allow omr_file labeledfs:filesystem associate;
+
+type cassd_exec, exec_type, vendor_file_type, file_type;
+type emservice_exec, exec_type, vendor_file_type, file_type;
+type vendor_secril_config_svc_exec, exec_type, vendor_file_type, file_type;
+type per_proxy_helper_exec, exec_type, vendor_file_type, file_type;
+type hal_hyper_default_exec, exec_type, vendor_file_type, file_type;
+type hal_converter_default_exec, exec_type, vendor_file_type, file_type;
+type hal_drk_default_exec, exec_type, vendor_file_type, file_type;
+type snap_hidl_exec, exec_type, vendor_file_type, file_type;
+type hal_sec_inputdev_default_exec, exec_type, vendor_file_type, file_type;
+type factory_ssc_exec, exec_type, vendor_file_type, file_type;
+type macloader_exec, exec_type, vendor_file_type, file_type;

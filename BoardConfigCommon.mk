@@ -101,13 +101,13 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     spu \
     omr
 
-# Security Patch Level
-VENDOR_SECURITY_PATCH := 2021-01-01
+# Security patch level
+VENDOR_SECURITY_PATCH := 2020-12-01
 
 # SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+# BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # Soong namespaces

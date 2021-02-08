@@ -114,11 +114,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 # Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.sm8150-libperfmgr
+# PRODUCT_PACKAGES += \
+#     android.hardware.power-service.sm8150-libperfmgr
 
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PLATFORM_VNDK_VERSION)/etc/powerhint.json
+# PRODUCT_COPY_FILES += \
+#     $(COMMON_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PLATFORM_VNDK_VERSION)/etc/powerhint.json
 
 # Recovery
 PRODUCT_PACKAGES += \
@@ -126,12 +126,12 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc
 
 # Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.sm8150-multihal
+# PRODUCT_PACKAGES += \
+#     android.hardware.sensors@2.1-service.sm8150-multihal
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.sensor.hifi_sensors.xml:system/etc/permissions/android.hardware.sensor.hifi_sensors.xml
+# PRODUCT_COPY_FILES += \
+#     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+#     frameworks/native/data/etc/android.hardware.sensor.hifi_sensors.xml:system/etc/permissions/android.hardware.sensor.hifi_sensors.xml
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -141,8 +141,8 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # Touch
-PRODUCT_PACKAGES += \
-    lineage.touch@1.0-service.sm8150
+# PRODUCT_PACKAGES += \
+#     lineage.touch@1.0-service.sm8150
 
 # Trust HAL
 PRODUCT_PACKAGES += \

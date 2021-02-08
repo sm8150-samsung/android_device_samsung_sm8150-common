@@ -40,6 +40,10 @@ TARGET_USES_UEFI := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+
 # Kernel
 TARGET_KERNEL_ARCH := arm64 
 TARGET_KERNEL_CLANG_COMPILE := true

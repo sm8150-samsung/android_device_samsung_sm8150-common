@@ -125,6 +125,12 @@ PRODUCT_PACKAGES += \
     fastbootd \
     init.recovery.qcom.rc
 
+# RRO Overlay
+PRODUCT_PACKAGES += \
+    WifiOverlay \
+    SoftapOverlay \
+    TetheringOverlay
+
 # Sensors
 # PRODUCT_PACKAGES += \
 #     android.hardware.sensors@2.1-service.sm8150-multihal
@@ -147,8 +153,3 @@ PRODUCT_BOOT_JARS += \
 # Trust HAL
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service
-
-# WiFi
-PRODUCT_PACKAGES += \
-    WifiOverlay \
-    SoftapOverlay

@@ -50,6 +50,9 @@ TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -82,6 +85,10 @@ TARGET_USES_MKE2FS := true
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # Root
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 BOARD_ROOT_EXTRA_FOLDERS := \
@@ -95,6 +102,9 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     prism \
     spu \
     omr
+
+# Security patch level
+VENDOR_SECURITY_PATCH := 2020-12-01
 
 # SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk

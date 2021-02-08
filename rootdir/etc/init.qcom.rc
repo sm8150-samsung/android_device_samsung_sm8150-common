@@ -50,6 +50,8 @@ on init
     chown system radio /sys/class/sec/switch/show_reg
     chown system radio /sys/class/sec/switch/hiccup
 
+    mount none /vendor/lost+found /vendor/overlay/SoftapOverlay/ bind
+
 on load_persist_props_action
     # Enable usap
     setprop persist.device_config.runtime_native.usap_pool_enabled true

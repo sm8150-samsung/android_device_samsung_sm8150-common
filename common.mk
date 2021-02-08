@@ -15,7 +15,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product-if-exists, vendor/samsung/sm8150-common/sm8150-common-vendor.mk)
 
 # Overlays
-PRODUCT_PACKAGE_OVERLAYS += \
+DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
     $(COMMON_PATH)/overlay-lineage
 

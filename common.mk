@@ -1,9 +1,3 @@
-#
-# Copyright (C) 2020 The LineageOS Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
 COMMON_PATH := device/samsung/sm8150-common
 
 PRODUCT_TARGET_VNDK_VERSION := 29
@@ -14,20 +8,76 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Proprietary blobs
 $(call inherit-product-if-exists, vendor/samsung/sm8150-common/sm8150-common-vendor.mk)
 
-# Overlays
-PRODUCT_PACKAGE_OVERLAYS += \
-    $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-lineage
-
-PRODUCT_ENFORCE_RRO_TARGETS += *
-
 # Audio 
 PRODUCT_PACKAGES += \
     audio.a2dp.default
 
+# Bootanimation Resolution
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap
+
+# Display Auto Device Selector- PizzaG
+## Beyond1qlte
+ifeq ($(PRODUCT_DEVICE), beyond1qlte)
+  PRODUCT_PRODUCT_PROPERTIES := ro.sf.lcd_density=560
+endif
+
+## Beyond2qlte
+ifeq ($(PRODUCT_DEVICE), beyond2qlte)
+  PRODUCT_PRODUCT_PROPERTIES := ro.sf.lcd_density=560
+endif
+
+## D1Q
+ifeq ($(PRODUCT_DEVICE), d1q)
+  PRODUCT_PRODUCT_PROPERTIES := ro.sf.lcd_density=560
+endif
+
+## D2Q
+ifeq ($(PRODUCT_DEVICE), d2q)
+  PRODUCT_PRODUCT_PROPERTIES := ro.sf.lcd_density=560
+endif
+
+# Fingerprint 
+## All Devices
+PRODUCT_COPY_FILES += \
+    device/samsung/sm8150-common/configs/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+
+## Beyond0qlte
+ifeq ($(PRODUCT_DEVICE), beyond0qlte)
+  PRODUCT_PACKAGES := android.hardware.biometrics.fingerprint@2.1-service.samsung
+endif
+
+## Beyond1qlte
+ifeq ($(PRODUCT_DEVICE), beyond1qlte)
+  PRODUCT_PACKAGES := lineage.biometrics.fingerprint.inscreen@1.0-service.beyond1qlte
+endif
+
+## Beyond2qlte
+ifeq ($(PRODUCT_DEVICE), beyond2qlte)
+  PRODUCT_PACKAGES := lineage.biometrics.fingerprint.inscreen@1.0-service.beyond2qlte
+endif
+
+## D1Q
+ifeq ($(PRODUCT_DEVICE), d1q)
+  PRODUCT_PACKAGES := lineage.biometrics.fingerprint.inscreen@1.0-service.d1q
+endif
+
+## D2Q
+ifeq ($(PRODUCT_DEVICE), d2q)
+  PRODUCT_PACKAGES := lineage.biometrics.fingerprint.inscreen@1.0-service.d2q
+endif
+
+# Gapps Selector
+ifeq ($(HAS_GAPPS), true)
+  $(call inherit-product, vendor/gapps/gapps.mk)
+endif
+
+# GSI Skip Mount
+PRODUCT_PACKAGES += \
+    gsi_skip_mount.cfg
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
@@ -37,10 +87,12 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.qcom.rc
+    init.qcom.rc \
+	fstab.qcom
 
-# OTA Updater
-AB_OTA_UPDATER := false
+# Lights
+PRODUCT_PACKAGES += \
+	android.hardware.light-service.sm8150
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -49,6 +101,16 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     com.android.nfc_extras
+
+# OTA Updater
+AB_OTA_UPDATER := false
+
+# Overlays
+PRODUCT_PACKAGE_OVERLAYS += \
+    $(COMMON_PATH)/overlay \
+    $(COMMON_PATH)/overlay-lineage
+
+PRODUCT_ENFORCE_RRO_TARGETS += *
 
 # Power
 PRODUCT_PACKAGES += \
@@ -92,3 +154,7 @@ PRODUCT_PACKAGES += \
 # WiFi
 PRODUCT_PACKAGES += \
     WifiOverlay
+
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    wifi.interface=wlan0
+

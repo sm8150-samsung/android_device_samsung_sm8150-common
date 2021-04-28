@@ -1,29 +1,29 @@
-#
-# Copyright (C) 2020 The LineageOS Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
 BOARD_VENDOR := samsung
 COMMON_PATH := device/samsung/sm8150-common
+
+# APEX
+#DEXPREOPT_GENERATE_APEX_IMAGE := true
+TARGET_FLATTEN_APEX := true
+
+# APN (Custom APN)
+CUSTOM_APNS_FILE := $(COMMON_PATH)/configs/apns-full-conf.xml
 
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a76
 TARGET_CPU_VARIANT_RUNTIME := cortex-a76
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a76
+TARGET_2ND_CPU_VARIANT := cortex-a9
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a9
 
 TARGET_USES_64_BIT_BINDER := true
-
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
@@ -37,6 +37,49 @@ TARGET_USES_UEFI := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
+
+# Enable dexpreopt to speed boot time
+ifeq ($(HOST_OS),linux)
+    ifneq ($(TARGET_BUILD_VARIANT),eng)
+        ifeq ($(WITH_DEXPREOPT),)
+            WITH_DEXPREOPT := true
+        endif
+    endif
+endif
+
+# HIDL Auto Device Selector- PizzaG
+ifeq ($(PRODUCT_DEVICE), beyond1qlte)
+	DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/framework_manifest.xml
+endif
+
+ifeq ($(PRODUCT_DEVICE), beyond2qlte)
+	DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/framework_manifest.xml
+endif
+
+ifeq ($(PRODUCT_DEVICE), d1q)
+	DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/framework_manifest.xml
+endif
+
+ifeq ($(PRODUCT_DEVICE), d2q)
+	DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/framework_manifest.xml
+endif
+
+# FOD Auto Device Selector- PizzaG
+ifeq ($(PRODUCT_DEVICE), beyond1qlte)
+	TARGET_SURFACEFLINGER_FOD_LIB := //$(COMMON_PATH):libfod_extension.beyond1qlte
+endif
+
+ifeq ($(PRODUCT_DEVICE), beyond2qlte)
+	TARGET_SURFACEFLINGER_FOD_LIB := //$(COMMON_PATH):libfod_extension.beyond2qlte
+endif
+
+ifeq ($(PRODUCT_DEVICE), d1q)
+	TARGET_SURFACEFLINGER_FOD_LIB := //$(COMMON_PATH):libfod_extension.d1q
+endif
+
+ifeq ($(PRODUCT_DEVICE), d2q)
+	TARGET_SURFACEFLINGER_FOD_LIB := //$(COMMON_PATH):libfod_extension.d2q
+endif
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64 
@@ -64,6 +107,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung

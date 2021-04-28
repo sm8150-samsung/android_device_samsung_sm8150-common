@@ -1,0 +1,103 @@
+cc_binary {
+    relative_install_path: "hw",
+    defaults: ["hidl_defaults"],
+    name: "lineage.biometrics.fingerprint.inscreen@1.0-service.beyond1qlte",
+    init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.beyond1qlte.rc"],
+    srcs: ["service.cpp", "FingerprintInscreen.cpp"],
+    shared_libs: [
+        "libbase",
+        "libhardware",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+        "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
+        "android.hardware.biometrics.fingerprint@2.1",
+        "vendor.samsung.hardware.biometrics.fingerprint@3.0",
+    ],
+}
+
+cc_library_static {
+    name: "libfod_extension.beyond1qlte",
+    srcs: ["FodExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
+    ],
+}
+
+cc_binary {
+    relative_install_path: "hw",
+    defaults: ["hidl_defaults"],
+    name: "lineage.biometrics.fingerprint.inscreen@1.0-service.beyond2qlte",
+    init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.beyond2qlte.rc"],
+    srcs: ["service.cpp", "FingerprintInscreen.cpp"],
+    shared_libs: [
+        "libbase",
+        "libhardware",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+        "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
+        "android.hardware.biometrics.fingerprint@2.1",
+        "vendor.samsung.hardware.biometrics.fingerprint@3.0",
+    ],
+}
+
+cc_library_static {
+    name: "libfod_extension.beyond2qlte",
+    srcs: ["FodExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
+    ],
+}
+
+cc_binary {
+    relative_install_path: "hw",
+    defaults: ["hidl_defaults"],
+    name: "lineage.biometrics.fingerprint.inscreen@1.0-service.d1q",
+    init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.d1q.rc"],
+    srcs: ["service.cpp", "FingerprintInscreen.cpp"],
+    shared_libs: [
+        "libbase",
+        "libhardware",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+        "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
+        "android.hardware.biometrics.fingerprint@2.1",
+        "vendor.samsung.hardware.biometrics.fingerprint@3.0",
+    ],
+}
+
+cc_library_static {
+    name: "libfod_extension.d1q",
+    srcs: ["FodExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
+    ],
+}
+
+cc_binary {
+    relative_install_path: "hw",
+    defaults: ["hidl_defaults"],
+    name: "lineage.biometrics.fingerprint.inscreen@1.0-service.d2q",
+    init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.d2q.rc"],
+    srcs: ["service.cpp", "FingerprintInscreen.cpp"],
+    shared_libs: [
+        "libbase",
+        "libhardware",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+        "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
+        "android.hardware.biometrics.fingerprint@2.1",
+        "vendor.samsung.hardware.biometrics.fingerprint@3.0",
+    ],
+}
+
+cc_library_static {
+    name: "libfod_extension.d2q",
+    srcs: ["FodExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
+    ],
+}

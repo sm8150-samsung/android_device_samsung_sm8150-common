@@ -1,9 +1,22 @@
 BOARD_VENDOR := samsung
 COMMON_PATH := device/samsung/sm8150-common
 
-# APEX
-#DEXPREOPT_GENERATE_APEX_IMAGE := true
-TARGET_FLATTEN_APEX := true
+# APEX Auto Device Selector- PizzaG
+ifeq ($(PRODUCT_DEVICE), beyond1qlte)
+	TARGET_FLATTEN_APEX := true
+endif
+
+ifeq ($(PRODUCT_DEVICE), beyond2qlte)
+	TARGET_FLATTEN_APEX := true
+endif
+
+ifeq ($(PRODUCT_DEVICE), d1q)
+	TARGET_FLATTEN_APEX := true
+endif
+
+ifeq ($(PRODUCT_DEVICE), d2q)
+	TARGET_FLATTEN_APEX := true
+endif
 
 # APN (Custom APN)
 CUSTOM_APNS_FILE := $(COMMON_PATH)/configs/apns-full-conf.xml

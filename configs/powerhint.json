@@ -171,6 +171,15 @@
             "ResetOnInit": true
         },
         {
+            "Name": "LLCCBWHystTriggerCount",
+            "Path": "/sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/hyst_trigger_count",
+            "Values": [
+              "0",
+              "3"
+            ],
+            "ResetOnInit": true
+        },
+        {
             "Name": "CPUBWSampleMs",
             "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/sample_ms",
             "Values": [
@@ -559,6 +568,102 @@
             "Node": "LLCCBWSampleMs",
             "Duration": 0,
             "Value": "10"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_HIGH",
+            "Node": "CPUBWSampleMs",
+            "Duration": 0,
+            "Value": "10"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_HIGH",
+            "Node": "CPUBWIOPercent",
+            "Duration": 0,
+            "Value": "80"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_HIGH",
+            "Node": "LLCCBWSampleMs",
+            "Duration": 0,
+            "Value": "10"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_HIGH",
+            "Node": "CPUBWHystTriggerCount",
+            "Duration": 0,
+            "Value": "0"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_HIGH",
+            "Node": "CPUBWHystLength",
+            "Duration": 0,
+            "Value": "0"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_HIGH",
+            "Node": "LLCCBWHystTriggerCount",
+            "Duration": 0,
+            "Value": "0"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_HIGH",
+            "Node": "LLCCBWHystLength",
+            "Duration": 0,
+            "Value": "0"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "CPUBigClusterMaxFreq",
+            "Duration": 0,
+            "Value": "2016000"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "CPUBigPlusClusterMaxFreq",
+            "Duration": 0,
+            "Value": "2016000"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "CPUBWSampleMs",
+            "Duration": 0,
+            "Value": "10"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "CPUBWIOPercent",
+            "Duration": 0,
+            "Value": "80"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "LLCCBWSampleMs",
+            "Duration": 0,
+            "Value": "10"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "CPUBWHystTriggerCount",
+            "Duration": 0,
+            "Value": "0"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "CPUBWHystLength",
+            "Duration": 0,
+            "Value": "0"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "LLCCBWHystTriggerCount",
+            "Duration": 0,
+            "Value": "0"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "LLCCBWHystLength",
+            "Duration": 0,
+            "Value": "0"
         },
         {
             "PowerHint": "CAMERA_SHOT",

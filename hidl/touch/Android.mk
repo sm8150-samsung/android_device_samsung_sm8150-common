@@ -44,6 +44,8 @@ LOCAL_REQUIRED_MODULES := \
     lineage.touch@1.0-service.samsung.rc \
     lineage.touch@1.0-service.samsung.xml
 
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
+
 LOCAL_SHARED_LIBRARIES := \
     libbase \
     libbinder \

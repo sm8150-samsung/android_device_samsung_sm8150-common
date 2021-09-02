@@ -24,6 +24,7 @@
 #
 
 import /prism/etc/init/init.rc
+import /system/etc/init/init.power.qcom.rc
 
 on init
     # Create energy-aware scheduler tuning audio nodes

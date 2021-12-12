@@ -61,7 +61,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung
+#TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 # Root
@@ -80,13 +80,10 @@ BOARD_ROOT_EXTRA_FOLDERS := \
 
 # SELinux
 include device/qcom/sepolicy/SEPolicy.mk
+include device/samsung_slsi/sepolicy.mk
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/samsung_slsi/sepolicy/common/private \
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
     $(COMMON_PATH)/sepolicy/private
-
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/samsung_slsi/sepolicy/common/public
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
